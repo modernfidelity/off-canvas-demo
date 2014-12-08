@@ -1,0 +1,83 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.nav {
+    padding: 10px;
+    margin: 0;
+    text-align: right;
+}
+
+.content {
+    background: grey;
+    padding: 10px;
+}
+
+@media (max-width: 700px) { 
+    
+    .menu-trigger {
+        background: yellowgreen;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        z-index: 1;
+    }
+    
+    .nav {  // Position nav behind page content 
+        padding-top: 20px;
+        position: fixed;
+        right: 0;
+        padding-left: 10%;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 0;
+    }
+    
+    .nav li {
+        margin-bottom: 30px;
+    }
+    
+    body { /* Hide overflow so content can be moved off canvas */
+        overflow-x: hidden;
+    }
+    
+    .content { /* Set up annimation for main content */
+        position: relative;
+        transition: right 1s; // Speed of annimation - NEEDS TO BE SAME AS IN JAVASCRIPT 
+    }
+    
+    .mob-menu-closing .content,
+    .mob-menu-closed .content { /* Menu is closed */
+        right: 0%;
+    }
+    
+    .mob-menu-closed .nav { /* Hide nav when menu is clsoed otherwise possible to see due to 'bounce' on safari */
+        display: none;
+    }
+    
+    .mob-menu-opening .content,
+    .mob-menu-opened .content{ 
+        right: 90%;
+    }
+    
+    
+}
+
+@media (min-width: 701px) { 
+    
+    .menu-trigger { /* Hide mobile menu trigger for large devices */
+        display: none;
+    }
+    
+    .nav li {
+        display: inline-block;
+    }
+    
+    /* Bootstrap overide */
+    .nav > li {
+        display: inline-block;
+    }
+
+}
