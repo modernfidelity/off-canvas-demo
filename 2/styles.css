@@ -1,0 +1,93 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.nav {
+    padding: 10px;
+    margin: 0;
+    text-align: right;
+}
+
+.content {
+    background: grey;
+    padding: 10px;
+}
+
+@media (max-width: 700px) { 
+    
+    .menu-trigger {
+        background: yellowgreen;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        z-index: 1;
+    }
+    
+    .nav {  /* Position nav behind page content  */
+        padding-top: 20px;
+        position: fixed;
+        right: 0;
+        padding-left: 10%;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 0;
+    }
+    
+    .nav li {
+        margin-bottom: 30px;
+    }
+    
+    body { /* Hide overflow so content can be moved off canvas */
+        overflow-x: hidden;
+    }
+    
+    .mob-menu-closed .nav { /* Hide nav when menu is clsoed otherwise possible to see due to 'bounce' on safari */
+        display: none;
+    }
+    
+    .content {
+        position: relative;
+    }
+    
+    /* Only user CSS 3D transform when supported */
+    .csstransforms3d .content {
+        transform: translate3d(0,0,0); /* Set transform up initially to stop potential flicker at start of annimation */
+        transition: transform 1s; /* Speed of annimation - NEEDS TO BE SAME AS IN JAVASCRIPT */
+    }
+
+    .csstransforms3d .mob-menu-opening .content,
+    .csstransforms3d .mob-menu-opened .content{ 
+        transform: translate3d(-90%,0,0);
+    }
+    
+    /* Fallback for when 3D transform isnt supported */
+    .no-csstransforms3d .content {
+        transition: right 1s; /* Speed of annimation - NEEDS TO BE SAME AS IN JAVASCRIPT */
+        right: 0%;
+    }
+    
+    .no-csstransforms3d .mob-menu-opening .content,
+    .no-csstransforms3d .mob-menu-opened .content{ 
+        right: 90%;
+    }
+        
+}
+
+@media (min-width: 701px) { 
+    
+    .menu-trigger { /* Hide mobile menu trigger for large devices */
+        display: none;
+    }
+    
+    .nav li {
+        display: inline-block;
+    }
+    
+    /* Bootstrap overide */
+    .nav > li {
+        display: inline-block;
+    }
+
+}
