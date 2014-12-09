@@ -1,3 +1,7 @@
+$(function() {
+    FastClick.attach(document.body); // https://github.com/ftlabs/fastclick
+});
+
 $(document).ready(function () {
 
     // @TODO Add annimating icon for menu
