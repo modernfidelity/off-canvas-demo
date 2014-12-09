@@ -1,5 +1,7 @@
 $(function() {
-    FastClick.attach(document.body); // https://github.com/ftlabs/fastclick
+    // Initiate fast click to remove the 300ms delay on click events for mobile 
+    // devices https://github.com/ftlabs/fastclick
+    FastClick.attach(document.body); 
 });
 
 $(document).ready(function () {
