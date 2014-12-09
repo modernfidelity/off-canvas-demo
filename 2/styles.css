@@ -57,12 +57,16 @@ body {
     
     /* Only user CSS 3D transform when supported */
     .csstransforms3d .content {
+        -webkit-transform: translate3d(0,0,0);
         transform: translate3d(0,0,0); /* Set transform up initially to stop potential flicker at start of annimation */
+        
+        -webkit-transition: -webkit-transform 1s;
         transition: transform 1s; /* Speed of annimation - NEEDS TO BE SAME AS IN JAVASCRIPT */
     }
 
     .csstransforms3d .mob-menu-opening .content,
     .csstransforms3d .mob-menu-opened .content{ 
+        -webkit-transform: translate3d(-80%,0,0);
         transform: translate3d(-80%,0,0);
     }
     
