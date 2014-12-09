@@ -1,3 +1,8 @@
+html,  
+body {
+    height: 100%; /* Required to make the full page swipable (see JS) */
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -11,7 +16,6 @@ body {
 
 .content {
     background: grey;
-    padding: 10px;
 }
 
 @media (max-width: 700px) { 
@@ -59,7 +63,7 @@ body {
 
     .csstransforms3d .mob-menu-opening .content,
     .csstransforms3d .mob-menu-opened .content{ 
-        transform: translate3d(-90%,0,0);
+        transform: translate3d(-80%,0,0);
     }
     
     /* Fallback for when 3D transform isnt supported */
@@ -70,7 +74,7 @@ body {
     
     .no-csstransforms3d .mob-menu-opening .content,
     .no-csstransforms3d .mob-menu-opened .content{ 
-        right: 90%;
+        right: 80%;
     }
         
 }

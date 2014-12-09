@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+    // @TODO Add annimating icon for menu
+    //  Test cross browser 
+
     // Create menu opening and closing functions 
     function closeMobMenu() {
         $('body').removeClass('mob-menu-opened').addClass('mob-menu-closing');
@@ -31,5 +34,18 @@ $(document).ready(function () {
             closeMobMenu();
         }
     });
+
+    //Swipe gestures: https://github.com/mattbryson/TouchSwipe-Jquery-Plugin
+    // CURRENTLY NOT WORKING ON LINKS 
+    $("body").swipe({
+        swipeLeft: function (event, direction, distance, duration, fingerCount) {
+            openMobMenu();
+        },
+        swipeRight: function (event, direction, distance, duration, fingerCount) {
+            closeMobMenu();
+        },
+        threshold: 0 //Default is 75px, set to 0 for demo so any distance triggers swipe
+    });
+
 
 });
