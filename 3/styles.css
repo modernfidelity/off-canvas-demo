@@ -44,6 +44,9 @@ body {
     
     .mob-menu-opening .menu-burger.one,
     .mob-menu-opened  .menu-burger.one {
+        -ms-transform: rotate(37deg);
+        -ms-transform-origin: 0 50%;
+        
         -webkit-transform: rotate(37deg);
         -webkit-transform-origin: 0 50%;
         
@@ -58,6 +61,9 @@ body {
     
     .mob-menu-opening .menu-burger.three,
     .mob-menu-opened  .menu-burger.three {
+        -ms-transform: rotate(-37deg);
+        -ms-transform-origin: 0 50%;
+        
         -webkit-transform: rotate(-37deg);
         -webkit-transform-origin: 0 50%;
         
