@@ -29,6 +29,45 @@ body {
         z-index: 1;
     }
     
+    .menu-burger {
+        height: 5px;
+        width: 50px;
+        margin-bottom: 10px;
+        background: blue;
+        transition: all 1s; /* Speed of annimation - NEEDS TO BE SAME AS IN JAVASCRIPT */
+    }
+    
+    .mob-menu-opening .menu-burger,
+    .mob-menu-opened  .menu-burger {
+        background: gold;
+    }
+    
+    .mob-menu-opening .menu-burger.one,
+    .mob-menu-opened  .menu-burger.one {
+        -webkit-transform: rotate(37deg);
+        -webkit-transform-origin: 0 50%;
+        
+        transform: rotate(37deg);
+        transform-origin: 0 50%;
+    }
+    
+    .mob-menu-opening .menu-burger.two,
+    .mob-menu-opened  .menu-burger.two {
+        opacity: 0;
+    }
+    
+    .mob-menu-opening .menu-burger.three,
+    .mob-menu-opened  .menu-burger.three {
+        -webkit-transform: rotate(-37deg);
+        -webkit-transform-origin: 0 50%;
+        
+        transform: rotate(-37deg);
+        transform-origin: 0 50%;
+    }
+    
+    
+    
+    
     .nav {  /* Position nav behind page content  */
         padding-top: 20px;
         position: fixed;
