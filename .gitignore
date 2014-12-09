@@ -1,5 +1,3 @@
 *.DS_Store
 nbproject/*
-/1 copy/nbproject/private/
-/2/nbproject/private/
-/2 copy/nbproject/private/
+*/nbproject/*
